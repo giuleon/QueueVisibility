@@ -43,6 +43,7 @@ namespace QueueVisibility
 
             // Create a message and add it to the queue.
             CloudQueueMessage message = new CloudQueueMessage(requestBody);
+            // The message will be visible in the queue after 3 days
             queue.AddMessage(message, initialVisibilityDelay: TimeSpan.FromDays(3));
 
             return name != null
