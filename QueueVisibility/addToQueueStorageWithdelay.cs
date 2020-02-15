@@ -43,7 +43,7 @@ namespace QueueVisibility
 
             // Create a message and add it to the queue.
             CloudQueueMessage message = new CloudQueueMessage(requestBody);
-            queue.AddMessage(message, initialVisibilityDelay: TimeSpan.FromDays(2));
+            queue.AddMessage(message, initialVisibilityDelay: TimeSpan.FromDays(3));
 
             return name != null
                 ? (ActionResult)new OkObjectResult($"Hello, {name}")
